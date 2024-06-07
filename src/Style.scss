@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+$light-blue: rgb(196, 211, 231);
+$main-blue: rgb(88, 126, 187);
+$purplish-blue: rgb(106, 139, 199);
+$dark-blue: rgb(46, 68, 129);
+$brown: rgb(166, 136, 104);
+$beige: rgb(227, 195, 157);
+$black: rgb(42, 42, 42);
+$white: rgb(240, 240, 240);
+
+$quicksand: "Quicksand", sans-serif;
+
+@mixin flex($align: center, $justify: center, $direction: row) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $quicksand;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app {
+  margin: 20px auto;
+  width: 90%;
+  min-height: 100vh;
+  background-color: $white;
+}
+
+nav {
+  height: 50px;
+  width: 100%;
+  background-color: $main-blue;
+  position: fixed;
+  top: 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  .nav-cont {
+    margin: 0 auto;
+    height: 50px;
+    width: 90%;
+    @include flex($justify: space-between);
+
+    .logo {
+      height: 30px;
+      width: 100px;
+      background-image: url("/logo.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    .menu-btn {
+      all: unset;
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      background-image: url("/icons/menu-gray.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: background-image 0.5s;
+
+      &.show {
+        background-image: url("/icons/x-gray.svg");
+        transition: background-image 0.5s;
+      }
+
+      &:hover {
+        scale: 1.1;
+        transition: 0.4s;
+      }
+    }
+
+    .navlinks {
+      @include flex();
+      width: 100vw;
+      position: absolute;
+      height: 100vh;
+      right: -600px;
+      top: 50px;
+      background-image: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        $light-blue
+      );
+      backdrop-filter: blur(2px);
+      opacity: 0;
+      transition: 0.5s;
+
+      .left {
+        height: 100%;
+        width: 60%;
+      }
+
+      .right {
+        height: 100%;
+        width: 40%;
+        @include flex($direction: column, $align: baseline, $justify: baseline);
+        padding: 40px;
+        gap: 40px;
+
+        .navlink {
+          all: unset;
+          cursor: pointer;
+          font-weight: 500;
+          letter-spacing: 2px;
+          color: $black;
+          transition: letter-spacing 0.5s;
+
+          &.active {
+            color: $dark-blue;
+            letter-spacing: 2px;
+            transition: letter-spacing 0.5s;
+            font-weight: 600;
+          }
+
+          &:hover {
+            letter-spacing: 3px;
+            transition: letter-spacing 0.5s;
+          }
+        }
+
+        ul {
+          @include flex($direction: column, $align: baseline);
+          gap: 20px;
+          padding-left: 20px;
+
+          .navlink.minor {
+            font-size: 12px;
+          }
+        }
+      }
+
+      &.show {
+        right: 0px;
+        transition: 0.5s;
+        opacity: 1;
+      }
+    }
+  }
+}

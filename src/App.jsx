@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./Style.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
+import AboutUs from "./Pages/AboutUs";
+import Products from "./Pages/Products";
 
-function App() {
-  const [count, setCount] = useState(0)
+import CategoryOne from "./Pages/Categories/CategoryOne";
+import CategoryTwo from "./Pages/Categories/CategoryTwo";
+import CategoryThree from "./Pages/Categories/CategoryThree";
+import CategoryFour from "./Pages/Categories/CategoryFour";
+import CategoryFive from "./Pages/Categories/CategoryFive";
+import CategorySix from "./Pages/Categories/CategorySix";
+
+
+import ThemeContext from "./Helpers/ThemeContext";
+import { useState } from "react";
+
+const App = () => {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <main>
+          <Navbar />
+          <div className="app">
+            <Routes>
+              <Route element={<Home />} path="/" />
+              <Route element={<Contact />} path="/contact" />
+              <Route element={<Products />} path="/products" />
+              <Route element={<CategoryOne />} path="/products/category-one" />
+              <Route element={<CategoryTwo />} path="/products/category-two" />
+              <Route
+                element={<CategoryThree />}
+                path="/products/category-three"
+              />
+              <Route
+                element={<CategoryFour />}
+                path="/products/category-four"
+              />
+              <Route
+                element={<CategoryFive />}
+                path="/products/category-five"
+              />
+              <Route
+                element={<CategorySix />}
+                path="/products/category-six"
+              />
+              <Route element={<AboutUs />} path="/aboutus" />
+            </Routes>
+          </div>
+          <Footer />
+        </main>
+      </ThemeContext.Provider>
+    </Router>
+  );
+};
 
-export default App
+export default App;
