@@ -27,13 +27,12 @@ $quicksand: "Quicksand", sans-serif;
 
 main {
   width: 100%;
-  margin-top: 70px;
+  margin-top: 50px;
   position: relative;
 }
 
 .app {
   margin: 0 auto;
-  width: 90%;
 }
 
 nav {
@@ -152,6 +151,7 @@ nav {
 }
 
 .page.home {
+  padding: 20px;
   .slide-container {
     height: 500px;
     border-radius: 8px;
@@ -221,7 +221,7 @@ nav {
         aspect-ratio: 1;
         border-radius: 5px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      
+
         &.one {
           grid-column-start: 1;
           grid-column-end: 3;
@@ -240,8 +240,73 @@ nav {
           background-image: url("/products/28.jpg");
         }
       }
+    }
+  }
+}
 
-      
+.page.products {
+  .head {
+    height: 300px;
+    background-color: gray;
+    @include flex($direction: column);
+
+    .head-title {
+      font-size: 22px;
+      letter-spacing: 3px;
+      font-weight: 500;
+    }
+
+    .head-desc {
+      letter-spacing: 1px;
+      text-align: center;
+      width: 80%;
+      line-height: 22px;
+    }
+  }
+  .page-cont {
+    grid-gap: 10%;
+    margin: 50px auto;
+
+    .product-page-category {
+      width: 70%;
+      margin: 0 auto;
+
+      .category-img-link {
+        width: 100%;
+        aspect-ratio: 1/1;
+        display: block;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      p {
+        text-align: center;
+        margin: 5% 0 15% 0;
+        font-size: 14px;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+    }
+    .product-page-category:nth-of-type(1) .category-img-link {
+      background-image: url("/products/15.jpg");
+    }
+    .product-page-category:nth-of-type(2) .category-img-link {
+      background-image: url("/products/16.jpg");
+    }
+    .product-page-category:nth-of-type(3) .category-img-link {
+      background-image: url("/products/17.jpg");
+    }
+    .product-page-category:nth-of-type(4) .category-img-link {
+      background-image: url("/products/18.jpg");
+    }
+    .product-page-category:nth-of-type(5) .category-img-link {
+      background-image: url("/products/19.jpg");
+    }
+    .product-page-category:nth-of-type(6) .category-img-link {
+      background-image: url("/products/11.jpg");
     }
   }
 }
