@@ -1,13 +1,16 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import VanillaTilt from "vanilla-tilt";
 
 const Products = () => {
-  VanillaTilt.init(document.querySelectorAll(".category-img-link"), {
-    max: 2,
-    speed: 100,
-    scale: 1.05,
-    glare: true,
-  });
+  useEffect(() => {
+    VanillaTilt.init(document.querySelectorAll(".category-img-link"), {
+      max: 2,
+      speed: 100,
+      scale: 1.05,
+      glare: true,
+    });
+  }, []);
 
   return (
     <div className="page products">

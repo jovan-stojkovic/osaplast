@@ -1,12 +1,15 @@
 import VanillaTilt from "vanilla-tilt";
+import { useEffect } from "react";
 
 const CategoryOne = () => {
-  VanillaTilt.init(document.querySelectorAll(".product"), {
-    max: 5,
-    speed: 200,
-    scale: 1.05,
-    glare: true,
-  });
+  useEffect(() => {
+    VanillaTilt.init(document.querySelectorAll(".product"), {
+      max: 5,
+      speed: 200,
+      scale: 1.05,
+      glare: true,
+    });
+  }, []);
 
   return (
     <div className="page category one">
