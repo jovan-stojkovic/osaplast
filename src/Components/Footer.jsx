@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section about">
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-section about">
           <h2>About Us</h2>
           <p>
             We are a company dedicated to providing the best services for our
@@ -12,7 +12,7 @@ const Footer = () => {
             expectations.
           </p>
         </div>
-        <div class="footer-section links">
+        <div className="footer-section links">
           <h2>Quick Links</h2>
           <ul>
             <li>
@@ -29,11 +29,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div class="footer-section contact">
+        <div className="footer-section contact">
           <h2>Contact Us</h2>
           <p>Email: contact@company.com</p>
           <p>Phone: (123) 456-7890</p>
-          <div class="social-icons">
+          <div className="social-icons">
             <a href="#">
               <img src="/icons/facebook.svg" alt="Facebook" />
             </a>
@@ -46,7 +46,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div className="footer-bottom">
         &copy; 2024 OsaPlast. All rights reserved.
       </div>
     </footer>
