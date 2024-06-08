@@ -26,24 +26,25 @@ $quicksand: "Quicksand", sans-serif;
 }
 
 main {
-  min-height: 100vh;
   width: 100%;
+  margin-top: 70px;
+  position: relative;
 }
 
 .app {
-  margin: 20px auto;
+  margin: 0 auto;
   width: 90%;
-  min-height: 100vh;
-  background-color: $white;
 }
 
 nav {
   height: 50px;
   width: 100%;
-  background-color: $main-blue;
+  background-color: rgb(88, 126, 187, 0.5);
+  backdrop-filter: blur(5px);
   position: fixed;
   top: 0;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  z-index: 10;
 
   .nav-cont {
     margin: 0 auto;
@@ -55,7 +56,7 @@ nav {
       height: 30px;
       width: 100px;
       background-image: url("/logo.png");
-      background-position: center;
+      background-position: left;
       background-repeat: no-repeat;
       background-size: contain;
     }
@@ -75,40 +76,32 @@ nav {
         background-image: url("/icons/x-gray.svg");
         transition: background-image 0.5s;
       }
-
-      &:hover {
-        scale: 1.1;
-        transition: 0.4s;
-      }
     }
 
     .navlinks {
       @include flex();
       width: 100vw;
       position: absolute;
-      height: 100vh;
-      right: -600px;
+      height: 0;
+      right: 0;
       top: 50px;
-      background-image: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        $light-blue
-      );
-      backdrop-filter: blur(2px);
-      opacity: 0;
-      transition: 0.5s;
+      transition: 0.2s;
+      overflow: hidden;
 
       .left {
         height: 100%;
-        width: 60%;
+        width: 55%;
       }
 
       .right {
         height: 100%;
-        width: 40%;
+        width: 45%;
         @include flex($direction: column, $align: baseline, $justify: baseline);
         padding-top: 40px;
+        padding-left: 20px;
         gap: 30px;
+        background-color: $light-blue;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
         .navlink {
           all: unset;
@@ -144,10 +137,192 @@ nav {
       }
 
       &.show {
-        right: 0px;
-        transition: 0.5s;
-        opacity: 1;
+        height: 100vh;
+        transition: 1s;
       }
     }
+  }
+}
+
+.horizontal-separator {
+  height: 2px;
+  width: 10%;
+  background-color: $dark-blue;
+  margin: 20px auto;
+}
+
+.page.home {
+  .slide-container {
+    height: 500px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+      rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    .react-slideshow-container .nav:first-of-type {
+      display: none;
+    }
+
+    .react-slideshow-container .nav:last-of-type {
+      display: none;
+    }
+  }
+
+  #slide {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    @include flex();
+    border-radius: 5px;
+
+    p.caption {
+      font-size: 16px;
+      color: $white;
+      padding: 25px 45px;
+      background-color: rgba(128, 128, 128, 0.444);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      margin-top: 300px;
+    }
+  }
+
+  .page-cont {
+    margin-top: 20px;
+    padding: 10px;
+
+    h1 {
+      font-weight: 200;
+      text-align: center;
+    }
+
+    h4 {
+      font-weight: 500;
+      margin: 20px 0;
+      line-height: 22px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      text-align: justify;
+      letter-spacing: 1px;
+      line-height: 20px;
+      font-size: 14px;
+    }
+
+    .grid {
+      margin: 40px auto;
+      width: 80%;
+      display: grid;
+      grid-template-columns: auto auto;
+      gap: 5px;
+
+      .cell {
+        background-position: center;
+        background-size: cover;
+        aspect-ratio: 1;
+        border-radius: 5px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      
+        &.one {
+          grid-column-start: 1;
+          grid-column-end: 3;
+          background-image: url("/products/5.jpg");
+        }
+        &.two {
+          background-image: url("/products/32.jpg");
+        }
+        &.three {
+          background-image: url("/products/16.jpg");
+        }
+        &.four {
+          background-image: url("/products/7.jpg");
+        }
+        &.five {
+          background-image: url("/products/28.jpg");
+        }
+      }
+
+      
+    }
+  }
+}
+
+.footer {
+  background-color: $light-blue;
+  width: 100%;
+  color: $black;
+  font-family: $quicksand;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-top: 20px;
+
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+
+    .footer-section {
+      flex: 1;
+      margin: 0 10px;
+
+      h2 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid $black;
+        padding-bottom: 5px;
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 5px 0;
+
+          a {
+            text-decoration: none;
+            color: $dark-blue;
+            font-size: 12px;
+            transition: color 0.3s;
+
+            &:hover {
+              color: $black;
+            }
+          }
+        }
+      }
+
+      .social-icons {
+        display: flex;
+        margin-top: 10px;
+
+        a {
+          margin-right: 10px;
+
+          img {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s;
+
+            &:hover {
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #555;
+    margin-top: 10px;
+    font-size: 10px;
+    font-weight: 500;
   }
 }

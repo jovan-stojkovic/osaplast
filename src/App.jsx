@@ -2,6 +2,7 @@ import "./Style.scss";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Slider from "./Components/Slider";
 import Home from "./Pages/Home";
 import Contact from "./Pages/Contact";
 import AboutUs from "./Pages/AboutUs";
@@ -14,9 +15,10 @@ import CategoryFour from "./Pages/Categories/CategoryFour";
 import CategoryFive from "./Pages/Categories/CategoryFive";
 import CategorySix from "./Pages/Categories/CategorySix";
 
-
 import ThemeContext from "./Helpers/ThemeContext";
 import { useState } from "react";
+
+import { noIMG, slides } from "./Helpers/Data";
 
 const App = () => {
   const [theme, setTheme] = useState("light");
@@ -32,7 +34,7 @@ const App = () => {
           <Navbar />
           <div className="app">
             <Routes>
-              <Route element={<Home />} path="/" />
+              <Route element={<Home slides={slides} />} exact path="/" />
               <Route element={<Contact />} path="/contact" />
               <Route element={<Products />} path="/products" />
               <Route element={<CategoryOne />} path="/products/category-one" />
@@ -49,10 +51,7 @@ const App = () => {
                 element={<CategoryFive />}
                 path="/products/category-five"
               />
-              <Route
-                element={<CategorySix />}
-                path="/products/category-six"
-              />
+              <Route element={<CategorySix />} path="/products/category-six" />
               <Route element={<AboutUs />} path="/aboutus" />
             </Routes>
           </div>
