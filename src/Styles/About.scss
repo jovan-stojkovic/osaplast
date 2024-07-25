@@ -1,0 +1,94 @@
+@import "./App.scss";
+
+.page.about-us {
+  section.about {
+    width: 90%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 90vh;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .text-part {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 50%;
+      position: relative;
+
+      h1 {
+        position: absolute;
+        top: 185px;
+        left: -280px;
+        font-size: 150px;
+        font-weight: 600;
+        color: rgba(205, 205, 205, 0.5);
+        letter-spacing: 5px;
+        transform: rotate(270deg);
+      }
+
+      .div-count {
+        font-size: 14px;
+        letter-spacing: 5px;
+        font-weight: 300;
+        color: gray;
+        text-align: center;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+
+        span {
+          font-weight: 600;
+          font-size: 50px;
+          height: 50px;
+          letter-spacing: 0;
+        }
+      }
+
+      p.desc {
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: justify;
+        line-height: 25px;
+      }
+    }
+
+    .img-part {
+      height: 100%;
+      width: 45%;
+      border-radius: 5px;
+      background-image: url("/photos/welding.jpeg");
+      background-position: center;
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      margin-left: 5%;
+      flex-direction: row-reverse;
+
+      .img-part {
+        background-image: url("/photos/deal.png");
+      }
+    }
+    &:nth-child(3) {
+      margin-left: 10%;
+      .img-part {
+        background-image: none;
+        display: grid;
+        grid-template-columns: auto auto;
+        img {
+          height: 195px;
+          width: 175px;
+          object-fit: cover;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
