@@ -1,0 +1,46 @@
+@import "./App.scss";
+
+.swiper-part {
+  margin: 100px auto;
+  height: 300px;
+  width: 100%;
+
+  .swiper-cont {
+    height: 100%;
+    padding-bottom: 60px; // Dodajte dovoljno prostora za paginaciju
+
+    .swiper {
+
+      .swiper-slide {
+        height: 300px;
+        width: 200px;
+
+        img {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          border-radius: 10px;
+        }
+      }
+
+      .swiper-pagination {
+        bottom: 0px; // Pomeranje tačkica na dno
+        text-align: center;
+        width: 100%;
+      }
+
+      .swiper-pagination-bullet {
+        background-color: white;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: white;
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 30px;
+      }
+    }
+  }
+}
