@@ -205,7 +205,6 @@ const Products = () => {
           <Swiper number={18} productName={"KUPATILSKA GALANTERIJA"} />
         </div>
       </motion.section>
-
       <motion.section
         className="vanilla-section"
         variants={sectionMotion}
@@ -213,28 +212,150 @@ const Products = () => {
         whileInView="visible"
         viewport={{ amount: 0.4, once: true }}
       >
-        <div className="text-part">
-          <h1>Category 4</h1>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-          <p>
-            Lorem ipsum dolor sit amet consect etur adipis icing elit. Qui quis
-            officiis, iure debitis ipsam laboriosam error obca ecati bland itiis
-            sapiente dolorum. Est repellat sapiente, itaque nisi quasi at cumque
-            nemo ipsa. Possimus esse omnis commodi hic volupt atibus? Ipsa
-            repudi andae sint, aperiam incidunt distinctio tempora tempor ibus
-            perfere ndis magnam pariatur facilis non reic iendis! Kitaque nisi
-            quasi at cumque nemo ipsa. Possimus esse omnis commodi hic volupt
-            atibus? Ipsa repudi andae sint, aperiam incidunt distinctio tempora
-            tempor ibus perfere ndis magnam pariatur facilis non reic iendis!
-          </p>
-          <Link
-            to="/proizvodi/kategorija-cetiri"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Pogledaj kompletnu ponudu
-          </Link>
+        <h1>Zidne sušilice za veš</h1>
+        <h3>
+          Praktično rešenje za sušenje veša u vašem domu uz našu zidnu sušilicu
+          za veš!
+        </h3>
+        <p>
+          Naša zidna sušilica za veš je idealan dodatak za svaki dom, pružajući
+          vam efikasno i prostorno rešenje za sušenje odeće. Sa elegantnim
+          dizajnom i funkcionalnim karakteristikama, ovo je savršeni proizvod za
+          maksimalnu upotrebu prostora u vašem kupatilu, hodniku ili bilo kojoj
+          drugoj prostoriji.
+        </p>
+        <h5>Karakteristike proizvoda:</h5>
+        <ul>
+          <li>
+            Kompaktan dizajn: Zidna montaža omogućava vam da oslobodite
+            dragoceni podni prostor i maksimalno iskoristite dostupne zidne
+            površine.
+          </li>
+          <li>
+            Prilagodljivost: Može se lako sklopiti kada nije u upotrebi, čime se
+            dodatno štedi prostor.
+          </li>
+          <li>
+            Snažna konstrukcija: Izrađena od visokokvalitetnih materijala
+            otpornih na vlagu, koja obezbeđuje dugotrajnu izdržljivost i
+            stabilnost.
+          </li>
+          <li>
+            Jednostavna ugradnja: Uključuje sve potrebne delove i uputstva za
+            jednostavnu montažu na zid.
+          </li>
+          <li>
+            Efikasno sušenje: Omogućava optimalan razmak za veš, poboljšavajući
+            protok vazduha i ubrzavajući proces sušenja.
+          </li>
+        </ul>
+        <h5>Zašto odabrati našu zidnu sušilicu za veš?</h5>
+        <ul>
+          <li>
+            Ušteda prostora: Idealno rešenje za manje stanove ili sobe gde je
+            svaki kvadratni metar važan.
+          </li>
+          <li>
+            Jednostavno korišćenje: Brza ugradnja i lak pristup vašem vešu čine
+            sušenje jednostavnim i efikasnim.
+          </li>
+          <li>
+            Moderni dizajn: Elegantan i funkcionalan izgled koji se uklapa u
+            različite stilove enterijera.
+          </li>
+        </ul>
+        <h5>
+          Naručite sada i unapredite organizaciju i efikasnost sušenja veša u
+          vašem domu uz našu zidnu sušilicu!
+        </h5>
+        <div className="swiper-part">
+          <Swiper number={3} productName={"ZIDNE SUŠILICE ZA VEŠ"} />
         </div>
-        <div className="img-part"></div>
+      </motion.section>
+      <motion.section
+        className="vanilla-section"
+        variants={sectionMotion}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.4, once: true }}
+      >
+        <h1>Izrada metalnog nameštaja</h1>
+        <h3>
+          Otkrijte izdržljivost i eleganciju uz našu kolekciju metalnog
+          nameštaja!
+        </h3>
+        <p>
+          Naša ponuda metalnog nameštaja kombinuje vrhunski dizajn i izuzetnu
+          funkcionalnost, pružajući savršeno rešenje za vaš dom, poslovni
+          prostor i terasni ili baštenski prostor. Bilo da tražite moderne
+          komade za dnevnu sobu, elegantne stolice za trpezariju, čvrste komode
+          za kancelariju, set za terasu ili baštu, naš metalni nameštaj nudi
+          kvalitet koji traje.
+        </p>
+        <h5>Naša ponuda:</h5>
+
+        <ul>
+          <li>
+            Prilagođeni komadi: Izrađujemo metalni nameštaj po meri, prilagođen
+            vašim željama i potrebama. Bez obzira da li vam je potreban nameštaj
+            za dom, kancelariju, restoran ili druge svrhe, garantujemo vrhunski
+            kvalitet i izuzetan dizajn.
+          </li>
+          <li>
+            Raznovrsnost dizajna: Naša ponuda obuhvata širok spektar metalnih
+            komada nameštaja, uključujući stolove, stolice, police, komode, kao
+            i specijalne komade po vašoj specifikaciji.
+          </li>
+          <li>
+            Kvalitet Materijala: Koristimo samo najkvalitetnije metale i legure,
+            što osigurava trajnost, otpornost na habanje i lako održavanje naših
+            proizvoda.
+          </li>
+          <li>
+            Personalizovani Pristup: Naš tim vam stoji na raspolaganju da
+            zajedno kreiramo jedinstvene komade koji će savršeno odgovarati
+            vašem prostoru i stilu.
+          </li>
+          <li>
+            Funkcionalnost: Prilagodljivi i praktični komadi nameštaja koji
+            zadovoljavaju vaše potrebe, bilo da se radi o skladištenju, sedenju
+            ili dekoraciji.
+          </li>
+          <li>
+            Lako održavanje: Metalne površine su otporne na mrlje i lako se
+            čiste, čineći održavanje jednostavnim.
+          </li>
+          <li>
+            Ekološki prihvatljivo: Održiv proizvodni proces i dugotrajni
+            materijali doprinose smanjenju otpada i ekološkom pristupu.
+          </li>
+        </ul>
+
+        <h5>Zašto izabrati nas?</h5>
+
+        <ul>
+          <li>
+            Iskustvo i stručnost: Sa višegodišnjim iskustvom u izradi nameštaja,
+            garantujemo vrhunski nivo kvaliteta i izrade.
+          </li>
+          <li>
+            Posvećenost klijentima: Vaše zadovoljstvo je naš prioritet. Trudimo
+            se da pružimo personalizovan pristup i podršku tokom svake faze
+            projekta.
+          </li>
+          <li>
+            Inovacija i estetika: Nudimo inovativna rešenja i pažljivo biramo
+            materijale i detalje kako bismo stvorili estetski privlačne komade
+            nameštaja.
+          </li>
+        </ul>
+
+        <h5>
+          Naručite sada i oplemenite svoj prostor uz naš metalni nameštaja!
+        </h5>
+        <div className="swiper-part">
+          <Swiper number={29} productName={"METALNI NAMEŠTAJ"} />
+        </div>
       </motion.section>
     </div>
   );

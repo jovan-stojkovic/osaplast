@@ -66,7 +66,7 @@ const SwiperComponent = ({ number, productName }) => {
       <Swiper
         modules={[Pagination, A11y, EffectCoverflow]}
         spaceBetween={10}
-        slidesPerView={3}
+        slidesPerView={4}
         loop={true}
         pagination={{ clickable: true }}
         effect="coverflow"
