@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "../Styles/Category.scss";
 import { motion } from "framer-motion";
+import VanillaTilt from "vanilla-tilt";
 
 const CatFour = () => {
   useEffect(() => {

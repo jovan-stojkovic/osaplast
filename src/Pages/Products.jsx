@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "../Styles/Products.scss";
 import { motion } from "framer-motion";
-import SwiperComponent from "../Components/Swiper";
+import Swiper from "../Components/SwiperComponent";
 
 const Products = () => {
   const sectionMotion = {
@@ -75,15 +75,8 @@ const Products = () => {
           Imate pitanja ili vam treba pomoć u odabiru? Naš tim stručnjaka je
           ovde da vam pomogne.
         </p>
-
-        {/* <Link
-            to="/proizvodi/kategorija-jedan"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Pogledaj kompletnu ponudu
-          </Link> */}
         <div className="swiper-part">
-          <SwiperComponent />
+          <Swiper number={11} productName={"UKRASNE GARNIŠNE"} />
         </div>
       </motion.section>
       <motion.section
@@ -93,28 +86,54 @@ const Products = () => {
         whileInView="visible"
         viewport={{ amount: 0.4, once: true }}
       >
-        <div className="text-part">
-          <h1>Category 2</h1>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-          <p>
-            Lorem ipsum dolor sit amet consect etur adipis icing elit. Qui quis
-            officiis, iure debitis ipsam laboriosam error obca ecati bland itiis
-            sapiente dolorum. Est repellat sapiente, itaque nisi quasi at cumque
-            nemo ipsa. Possimus esse omnis commodi hic volupt atibus? Ipsa
-            repudi andae sint, aperiam incidunt distinctio tempora tempor ibus
-            perfere ndis magnam pariatur facilis non reic iendis! Kitaque nisi
-            quasi at cumque nemo ipsa. Possimus esse omnis commodi hic volupt
-            atibus? Ipsa repudi andae sint, aperiam incidunt distinctio tempora
-            tempor ibus perfere ndis magnam pariatur facilis non reic iendis!
-          </p>
-          <Link
-            to="/proizvodi/kategorija-dva"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Pogledaj kompletnu ponudu
-          </Link>
+        <h1>Nosači za zavesu za kadu</h1>
+        <h3>
+          Transformišite svoje kupatilo uz naš visokokvalitetan nosač za zavesu
+          za kadu!
+        </h3>
+        <p>
+          Naš nosač za zavesu dizajniran je da unapredi funkcionalnost i
+          estetiku vašeg kupatila. Izrađen od izdržljivih materijala, garantuje
+          dugotrajnu upotrebu i otpornost na vlagu. Elegantnog i modernog
+          dizajna, savršeno se uklapa u svaki stil kupatila, bilo da je klasičan
+          ili savremen.
+        </p>
+        <h5>Karakteristike proizvoda:</h5>
+        <ul>
+          <li>
+            Kvalitetna izrada: Napravljen od čvrstih i otpornih materijala koji
+            osiguravaju dug vek trajanja.
+          </li>
+          <li>
+            Laka instalacija: Jednostavno se montira uz pomoć priloženih
+            instrukcija, uz minimalnu upotrebu dodatnog alata.
+          </li>
+          <li>
+            Podesiva dužina: Omogućava vam da prilagodite nosač veličini vaše
+            kade i prostora.
+          </li>
+          <li>
+            Stabilnost i sigurnost: Pruža čvrstu podršku za zavese, sprečavajući
+            njihovo klizanje ili padanje.
+          </li>
+          <li>
+            Elegantan dizajn: Sa glatkim završnim obradama i modernim izgledom,
+            dodatno obogaćuje prostor vaše kupatilske oaze.
+          </li>
+        </ul>
+        <p>
+          Obezbedite sebi praktičnost i stil uz naš držač za zavesu za kadu.
+          Idealan je za svaki dom, omogućavajući vam da uživate u opuštanju pod
+          tušem ili u kadi uz dodatni komfor.
+        </p>
+        <h5>Kontaktirajte nas</h5>
+        <p>
+          Imate pitanja ili vam treba pomoć u odabiru? Naš tim stručnjaka je
+          ovde da vam pomogne.
+        </p>
+        <div className="swiper-part">
+          <Swiper number={8} productName={"NOSAČI ZAVESA"} />
         </div>
-        <div className="img-part"></div>
       </motion.section>
       <motion.section
         className="vanilla-section"
@@ -123,29 +142,70 @@ const Products = () => {
         whileInView="visible"
         viewport={{ amount: 0.4, once: true }}
       >
-        <div className="text-part">
-          <h1>Category 3</h1>
-          <h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
-          <p>
-            Lorem ipsum dolor sit amet consect etur adipis icing elit. Qui quis
-            officiis, iure debitis ipsam laboriosam error obca ecati bland itiis
-            sapiente dolorum. Est repellat sapiente, itaque nisi quasi at cumque
-            nemo ipsa. Possimus esse omnis commodi hic volupt atibus? Ipsa
-            repudi andae sint, aperiam incidunt distinctio tempora tempor ibus
-            perfere ndis magnam pariatur facilis non reic iendis! Kitaque nisi
-            quasi at cumque nemo ipsa. Possimus esse omnis commodi hic volupt
-            atibus? Ipsa repudi andae sint, aperiam incidunt distinctio tempora
-            tempor ibus perfere ndis magnam pariatur facilis non reic iendis!
-          </p>
-          <Link
-            to="/proizvodi/kategorija-tri"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            Pogledaj kompletnu ponudu
-          </Link>
+        <h1>Kupatilska galanterija</h1>
+        <h3>
+          Otkrijte savršenu kombinaciju funkcionalnosti i stila uz našu
+          kupatilsku galanteriju!
+        </h3>
+        <p>
+          Naša kolekcija kupatilske galanterije obuhvata sve što vam je potrebno
+          za stvaranje savršenog kupatila. Bilo da želite unaprediti estetiku
+          prostora ili poboljšati njegovu funkcionalnost, naš širok asortiman
+          proizvoda nudi rešenja za svaki deo vašeg kupatila.
+        </p>
+        <h5>Šta nudimo:</h5>
+        <ul>
+          <li>
+            Funkcionalni dodaci: Otkrijte visokokvalitetne držače za peškire,
+            sapune, police i organizatore koji vam pomažu da održite red i
+            organizaciju u vašem kupatilu.
+          </li>
+          <li>
+            Elegantni detalji: Naša ponuda uključuje sofisticirane elemente
+            poput modernih čaša za četkice i po vašoj želji dizajniranih držača
+            za toalet papir i sapun, koji dodaju dašak luksuza vašem prostoru.
+          </li>
+          <li>
+            Izdržljivi materijali: Sve proizvode izrađujemo od inoxa ili
+            aluminijuma, kao pažljivo odabranih materijala koji garantuju
+            dugotrajnu izdržljivost i lakoću održavanja, otporni su na vlagu i
+            svakodnevno trošenje.
+          </li>
+          <li>
+            Jednostavna instalacija: Svi naši proizvodi dolaze sa jasnim
+            uputstvima za instalaciju, omogućavajući vam brzu i jednostavnu
+            montažu.
+          </li>
+        </ul>
+
+        <h5>Zašto odabrati nas?</h5>
+        <ul>
+          <li>
+            Širok asortiman: Bogata ponuda koja zadovoljava sve vaše potrebe, uz
+            mogućnost da sami kreirate oblik i izgled uz dogovor sa nama.
+          </li>
+          <li>
+            Visok kvalitet: Proizvodi koji kombinuju vrhunski dizajn i
+            funkcionalnost.
+          </li>
+          <li>
+            Brza dostava i mogućnost ugradnje: Efikasna usluga dostave koja vam
+            omogućava da brzo uživate u novim dodacima za kupatilo. Na
+            raspolaganju smo za ugradnju većih količina proizvoda, u dogovoru sa
+            vama.
+          </li>
+        </ul>
+        <p>
+          Poboljšajte svoje kupatilo sa našom galanterijom i transformišite ga u
+          prostor savršen za opuštanje i uživanje. Istražite našu ponudu i
+          pronađite proizvode koji odgovaraju vašem stilu i potrebama!
+        </p>
+        <h5>Naručite sada i unapredite svoj prostor sa stilom!</h5>
+        <div className="swiper-part">
+          <Swiper number={18} productName={"KUPATILSKA GALANTERIJA"} />
         </div>
-        <div className="img-part"></div>
       </motion.section>
+
       <motion.section
         className="vanilla-section"
         variants={sectionMotion}
