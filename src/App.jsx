@@ -10,10 +10,10 @@ import Products from "./Pages/Products";
 import Contact from "./Pages/Contact";
 import LoadingPage from "./Pages/LoadingPage";
 
-import CatOne from "./Categories/CatOne";
-import CatTwo from "./Categories/CatTwo";
-import CatThree from "./Categories/CatThree";
-import CatFour from "./Categories/CatFour";
+import Garnisne from "./Categories/Garnisne";
+import NosaciZavesa from "./Categories/NosaciZavesa";
+import Galanterija from "./Categories/Galanterija";
+import ZidneSusilice from "./Categories/ZidneSusilice";
 import { useState } from "react";
 
 import ThemeContext from "./Helpers/ThemeContext";
@@ -42,21 +42,18 @@ const App = () => {
                   <Route exact path="/" element={<Home loading={loading} />} />
                   <Route path="/o-nama" element={<About />} />
                   <Route path="/proizvodi" element={<Products />} />
+                  <Route path="/proizvodi/garnisne" element={<Garnisne />} />
                   <Route
-                    path="/proizvodi/kategorija-jedan"
-                    element={<CatOne />}
+                    path="/proizvodi/nosaci-zavesa"
+                    element={<NosaciZavesa />}
                   />
                   <Route
-                    path="/proizvodi/kategorija-dva"
-                    element={<CatTwo />}
+                    path="/proizvodi/kupatilska-galanterija"
+                    element={<Galanterija />}
                   />
                   <Route
-                    path="/proizvodi/kategorija-tri"
-                    element={<CatThree />}
-                  />
-                  <Route
-                    path="/proizvodi/kategorija-cetiri"
-                    element={<CatFour />}
+                    path="/proizvodi/zidne-susilice"
+                    element={<ZidneSusilice />}
                   />
                   <Route path="/kontakt" element={<Contact />} />
                 </Routes>

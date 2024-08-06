@@ -3,51 +3,157 @@
 .page.products {
   width: 100%;
 
-  section {
-    margin: 50px auto;
+  .products-wrap {
     width: 100%;
-    background-color: transparent;
-    padding: 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(2px);
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    border: 2px solid white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin-bottom: 50px;
 
-    h1 {
-      letter-spacing: 8px;
-      font-weight: 200;
-      font-size: 50px;
-      letter-spacing: 10px;
-      color: gray;
-      line-height: 50px;
-    }
+    .vanilla-section {
+      width: 48%;
+      margin: 1%;
+      aspect-ratio: 1/1;
+      background-color: transparent;
+      border-radius: 20px;
+      backdrop-filter: blur(2px);
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      border: 2px solid white;
 
-    h3 {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 25px;
-      margin-bottom: 20px;
-    }
+      &.one {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/UKRASNE GARNIŠNE/1.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/UKRASNE GARNIŠNE/2.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/UKRASNE GARNIŠNE/3.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/UKRASNE GARNIŠNE/7.jpg");
+              }
+            }
+          }
+        }
+      }
 
-    h5 {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 25px;
-      margin-top: 20px;
-      font-weight: 500;
-    }
+      &.two {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/NOSAČI ZAVESA/1.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/NOSAČI ZAVESA/2.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/NOSAČI ZAVESA/5.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/NOSAČI ZAVESA/8.jpg");
+              }
+            }
+          }
+        }
+      }
 
-    p {
-      font-weight: 300;
-      text-align: justify;
-    }
+      &.three {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/KUPATILSKA GALANTERIJA/1.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/KUPATILSKA GALANTERIJA/2.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/KUPATILSKA GALANTERIJA/3.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/KUPATILSKA GALANTERIJA/4.jpg");
+              }
+            }
+          }
+        }
+      }
 
-    ul {
-      li {
-        font-size: 14px;
-        margin-left: 30px;
-        margin-bottom: 5px;
-        text-align: justify;
+      &.four {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/ZIDNE SUŠILICE ZA VEŠ/1.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/ZIDNE SUŠILICE ZA VEŠ/2.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/ZIDNE SUŠILICE ZA VEŠ/3.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/ZIDNE SUŠILICE ZA VEŠ/1.jpg");
+              }
+            }
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        text-decoration: none;
+        color: gray;
+
+        h1 {
+          letter-spacing: 6px;
+          font-weight: 200;
+          font-size: 30px;
+        }
+
+        h3 {
+          font-weight: 200;
+          font-size: 18px;
+          line-height: 25px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: black;
+          font-size: 14px;
+          text-align: justify;
+          font-weight: 300;
+          margin-bottom: 20px;
+        }
+
+        .img-grid {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1%;
+
+          .img-cont {
+            width: 25%;
+            aspect-ratio: 1/1;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            border-radius: 5px;
+            filter: grayscale(0.5);
+          }
+        }
       }
     }
   }

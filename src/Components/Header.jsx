@@ -90,40 +90,67 @@ const Header = () => {
               <div className={`hidden-div ${showHiddenDiv}`}>
                 <div className="hidden-div-cont">
                   <NavLink
-                    to="/proizvodi/kategorija-jedan"
+                    to="/proizvodi/garnisne"
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                       handleMenu();
                     }}
                   >
-                    Kategorija 1
+                    Garnišne
                   </NavLink>
                   <NavLink
-                    to="/proizvodi/kategorija-dva"
+                    to="/proizvodi/nosaci-zavesa"
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                       handleMenu();
                     }}
                   >
-                    Kategorija 2
+                    Nosači zavesa
                   </NavLink>
                   <NavLink
-                    to="/proizvodi/kategorija-tri"
+                    to="/proizvodi/kupatilska-galanterija"
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                       handleMenu();
                     }}
                   >
-                    Kategorija 3
+                    Galanterija
                   </NavLink>
                   <NavLink
-                    to="/proizvodi/kategorija-cetiri"
+                    to="/proizvodi/zidne-susilice"
                     onClick={() => {
                       window.scrollTo({ top: 0, behavior: "smooth" });
                       handleMenu();
                     }}
                   >
-                    Kategorija 4
+                    Zidne sušulice
+                  </NavLink>
+                  <NavLink
+                    to="/proizvodi/metalni-namestaj"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      handleMenu();
+                    }}
+                  >
+                    Metalni nameštaj
+                  </NavLink>
+                  <NavLink
+                    to="/proizvodi/metalne-ograde"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      handleMenu();
+                    }}
+                  >
+                    Metalne ograde
+                  </NavLink>
+                  <NavLink
+                    to="/proizvodi/metalne-konstrukcije"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                      handleMenu();
+                    }}
+                  >
+                    Metalne konstrukcije
                   </NavLink>
                 </div>
               </div>
