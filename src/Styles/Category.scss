@@ -1,100 +1,105 @@
 @import "./App.scss";
 
 .page.category {
-  .top-part {
-    h1 {
-      font-size: 45px;
-      font-weight: 200;
+  margin: 0 auto;
+  width: 100%;
+  padding: 30px;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  min-height: 100vh;
+
+
+  h1 {
+    font-size: 40px;
+    font-weight: 200;
+    line-height: 40px;
+    margin-top: 30px;
+    letter-spacing: 10px;
+    color: gray;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    color: gray;
+  }
+
+  p {
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-align: justify;
+
+    &.p-link {
       margin-top: 30px;
-      letter-spacing: 10px;
-      color: gray;
-    }
-
-    h3 {
-      font-size: 20px;
-      font-weight: 200;
-      letter-spacing: 3px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 14px;
-      letter-spacing: 2px;
-      line-height: 20px;
-      text-align: justify;
     }
   }
 
-  .product-grid {
-    width: 100%;
-    min-height: 100vh;
-    margin-top: 50px;
+  h5 {
+    font-size: 18px;
+    margin: 30px 0 15px;
+    font-weight: 500;
+    letter-spacing: 2px;
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
 
-    .single-product {
-      width: calc(25% - 20px);
-      aspect-ratio: 1/1.1;
-      margin-right: 26.666px;
-      margin-bottom: 26.666px;
-      background-image: url("/products/1.jpg");
-      background-position: center;
+    button {
+      all: unset;
+      width: 20px;
+      height: 20px;
+      background-image: url("/icons/down.svg");
       background-size: cover;
-      border-radius: 5px;
-      position: relative;
       cursor: pointer;
-      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      transition: transform 0.2s ease;
 
-      &:nth-child(4n) {
-        margin-right: 0;
-      }
-
-      .product-info-text {
-        position: absolute;
-        bottom: 10px;
-        height: 0;
-        overflow: hidden;
-        transition: height 0.5s;
-        background-color: rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(5px);
-
-        p {
-          padding: 2px;
-          border-radius: 2px;
-          font-size: 14px;
-          color: white;
-          text-align: center;
-
-          &.name {
-            font-size: 16px;
-            letter-spacing: 3px;
-          }
-        }
-      }
-
-      &:hover {
-        .product-info-text {
-          height: 80px;
-        }
+      &.show {
+        transform: rotate(-180deg);
       }
     }
   }
-  &.two {
-    .single-product {
-      background-image: url("/products/20.jpg");
+
+  ul {
+    max-height: 0;
+    overflow-y: hidden;
+    letter-spacing: 2px;
+    line-height: 24px;
+    text-align: justify;
+    margin-bottom: 20px;
+    font-size: 15px;
+    margin-left: 50px;
+    transition: max-height 0.5s ease-out;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    &.show {
+      max-height: 250px;
     }
   }
 
-  &.three {
-    .single-product {
-      background-image: url("/products/10.jpg");
-    }
+  span {
+    font-weight: 600;
   }
 
-  &.four {
-    .single-product {
-      background-image: url("/products/30.jpg");
+  a {
+    text-decoration: none;
+    color: $darkblue;
+    font-weight: 600;
+    display: inline-block;
+    background-image: linear-gradient($darkblue 0 0);
+    background-position: 0 100%;
+    background-size: 0% 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.2s, background-position 0s 0.2s;
+
+    &:hover {
+      background-position: 100% 100%;
+      background-size: 100% 3px;
     }
   }
 }

@@ -1,120 +1,151 @@
 import "../Styles/Category.scss";
-import { useEffect } from "react";
-import VanillaTilt from "vanilla-tilt";
 import Swiper from "../Components/SwiperComponent";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Galanterija = () => {
-  useEffect(() => {
-    let elements = document.querySelectorAll(".single-product");
-    VanillaTilt.init(elements, {
-      max: 5,
-      speed: 1000,
-      scale: 1.1,
-      glare: true,
-    });
+  const [showFirst, setShowFirst] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
 
-    return () => {
-      elements.forEach((element) => {
-        element.vanillaTilt.destroy();
-      });
-    };
-  }, []);
-
-  const products = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-    22,
-  ];
-
-  const containerMotion = {
-    hidden: {},
+  const generalMotion = {
+    hidden: {
+      opacity: 0,
+    },
     visible: {
+      opacity: 1,
       transition: {
+        // delayChildren: 0.1,
         staggerChildren: 0.1,
       },
     },
   };
 
-  const productMotion = {
+  const pMotion = {
     hidden: {
-      x: -50,
+      x: -300,
       opacity: 0,
     },
     visible: {
       x: 0,
       opacity: 1,
       transition: {
-        duration: 0.3,
+        duration: 0.1,
         type: "spring",
         stiffness: 120,
       },
     },
   };
 
+  const swiperMotion = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 2,
+      },
+    },
+  };
+
   return (
-    <div className="page category three">
+    <motion.div
+      className="page category three"
+      variants={generalMotion}
+      initial="hidden"
+      animate="visible"
+    >
       <h1>Kupatilska galanterija</h1>
-      <h3>
+      <motion.h3 variants={pMotion}>
         Otkrijte savršenu kombinaciju funkcionalnosti i stila uz našu kupatilsku
         galanteriju!
-      </h3>
-      <p>
+      </motion.h3>
+      <motion.p variants={pMotion}>
         Naša kolekcija kupatilske galanterije obuhvata sve što vam je potrebno
         za stvaranje savršenog kupatila. Bilo da želite unaprediti estetiku
         prostora ili poboljšati njegovu funkcionalnost, naš širok asortiman
         proizvoda nudi rešenja za svaki deo vašeg kupatila.
-      </p>
-      <h5>Šta nudimo:</h5>
-      <ul>
+      </motion.p>
+      <motion.h5 variants={pMotion}>
+        Šta nudimo:{" "}
+        <button
+          className={showFirst && "show"}
+          onClick={() => setShowFirst(!showFirst)}
+        ></button>
+      </motion.h5>
+      <ul className={showFirst && "show"}>
         <li>
-          Funkcionalni dodaci: Otkrijte visokokvalitetne držače za peškire,
-          sapune, police i organizatore koji vam pomažu da održite red i
-          organizaciju u vašem kupatilu.
+          <span>Funkcionalni dodaci:</span> Otkrijte visokokvalitetne držače za
+          peškire, sapune, police i organizatore koji vam pomažu da održite red
+          i organizaciju u vašem kupatilu.
         </li>
         <li>
-          Elegantni detalji: Naša ponuda uključuje sofisticirane elemente poput
-          modernih čaša za četkice i po vašoj želji dizajniranih držača za
-          toalet papir i sapun, koji dodaju dašak luksuza vašem prostoru.
+          <span>Elegantni detalji:</span> Naša ponuda uključuje sofisticirane
+          elemente poput modernih čaša za četkice i po vašoj želji dizajniranih
+          držača za toalet papir i sapun, koji dodaju dašak luksuza vašem
+          prostoru.
         </li>
         <li>
-          Izdržljivi materijali: Sve proizvode izrađujemo od inoxa ili
-          aluminijuma, kao pažljivo odabranih materijala koji garantuju
+          <span>Izdržljivi materijali:</span> Sve proizvode izrađujemo od inoxa
+          ili aluminijuma, kao pažljivo odabranih materijala koji garantuju
           dugotrajnu izdržljivost i lakoću održavanja, otporni su na vlagu i
           svakodnevno trošenje.
         </li>
         <li>
-          Jednostavna instalacija: Svi naši proizvodi dolaze sa jasnim
-          uputstvima za instalaciju, omogućavajući vam brzu i jednostavnu
+          <span>Jednostavna instalacija:</span> Svi naši proizvodi dolaze sa
+          jasnim uputstvima za instalaciju, omogućavajući vam brzu i jednostavnu
           montažu.
         </li>
       </ul>
 
-      <h5>Zašto odabrati nas?</h5>
-      <ul>
+      <motion.h5 variants={pMotion}>
+        Zašto odabrati nas?{" "}
+        <button
+          className={showSecond && "show"}
+          onClick={() => setShowSecond(!showSecond)}
+        ></button>
+      </motion.h5>
+      <ul className={showSecond && "show"}>
         <li>
-          Širok asortiman: Bogata ponuda koja zadovoljava sve vaše potrebe, uz
-          mogućnost da sami kreirate oblik i izgled uz dogovor sa nama.
+          <span>Širok asortiman:</span> Bogata ponuda koja zadovoljava sve vaše
+          potrebe, uz mogućnost da sami kreirate oblik i izgled uz dogovor sa
+          nama.
         </li>
         <li>
-          Visok kvalitet: Proizvodi koji kombinuju vrhunski dizajn i
-          funkcionalnost.
+          <span>Visok kvalitet:</span> Proizvodi koji kombinuju vrhunski dizajn
+          i funkcionalnost.
         </li>
         <li>
-          Brza dostava i mogućnost ugradnje: Efikasna usluga dostave koja vam
-          omogućava da brzo uživate u novim dodacima za kupatilo. Na
-          raspolaganju smo za ugradnju većih količina proizvoda, u dogovoru sa
-          vama.
+          <span>Brza dostava i mogućnost ugradnje:</span> Efikasna usluga
+          dostave koja vam omogućava da brzo uživate u novim dodacima za
+          kupatilo. Na raspolaganju smo za ugradnju većih količina proizvoda, u
+          dogovoru sa vama.
         </li>
       </ul>
-      <p>
+      <motion.p variants={pMotion}>
         Poboljšajte svoje kupatilo sa našom galanterijom i transformišite ga u
         prostor savršen za opuštanje i uživanje. Istražite našu ponudu i
         pronađite proizvode koji odgovaraju vašem stilu i potrebama!
-      </p>
-      <h5>Naručite sada i unapredite svoj prostor sa stilom!</h5>
-      <div className="swiper-part">
+      </motion.p>
+      <motion.p className="p-link" variants={pMotion}>
+        <Link
+          to="/kontakt"
+          target="_blank"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            handleMenu();
+          }}
+        >
+          Naručite sada
+        </Link>{" "}
+        i unapredite svoj prostor sa stilom!
+      </motion.p>
+      <motion.div className="swiper-part" variants={swiperMotion}>
         <Swiper number={18} productName={"KUPATILSKA GALANTERIJA"} />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

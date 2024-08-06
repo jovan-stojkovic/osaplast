@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, A11y, EffectCoverflow } from "swiper/modules";
+import { Pagination, A11y, EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/bundle";
 import "swiper/css/pagination";
@@ -8,11 +8,15 @@ import "swiper/css/effect-coverflow";
 import "../Styles/Swiper.scss";
 import ReactDOM from "react-dom";
 
-const Modal = ({ imageSrc, onClose }) => {
+const Modal = ({ images, currentIndex, onClose, onNext, onPrev }) => {
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         onClose();
+      } else if (e.key === "ArrowRight") {
+        onNext();
+      } else if (e.key === "ArrowLeft") {
+        onPrev();
       }
     };
 
@@ -21,11 +25,17 @@ const Modal = ({ imageSrc, onClose }) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [onClose]);
+  }, [onClose, onNext, onPrev]);
 
   return ReactDOM.createPortal(
     <div className="modal active">
-      <img src={imageSrc} alt="modal_image" onClick={onClose} />
+      <img
+        src={images[currentIndex]}
+        alt={`modal_image_${currentIndex}`}
+        onClick={onClose}
+      />
+      <button className="modal-prev" onClick={onPrev}></button>
+      <button className="modal-next" onClick={onNext}></button>
     </div>,
     document.body
   );
@@ -33,16 +43,24 @@ const Modal = ({ imageSrc, onClose }) => {
 
 const SwiperComponent = ({ number, productName }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImageIndex, setModalImageIndex] = useState(null);
 
-  const openModal = (imageSrc) => {
-    setModalImage(imageSrc);
+  const openModal = (index) => {
+    setModalImageIndex(index);
     setIsModalOpen(true);
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setModalImage(null);
+    setModalImageIndex(null);
+  };
+
+  const handleNext = () => {
+    setModalImageIndex((prevIndex) => (prevIndex + 1) % number);
+  };
+
+  const handlePrev = () => {
+    setModalImageIndex((prevIndex) => (prevIndex - 1 + number) % number);
   };
 
   const generateSlides = () => {
@@ -53,7 +71,7 @@ const SwiperComponent = ({ number, productName }) => {
           <img
             src={`/products/${productName}/${i}.jpg`}
             alt={`slide_image_${i}`}
-            onClick={() => openModal(`/products/${productName}/${i}.jpg`)}
+            onClick={() => openModal(i - 1)}
           />
         </SwiperSlide>
       );
@@ -61,27 +79,52 @@ const SwiperComponent = ({ number, productName }) => {
     return slides;
   };
 
+  const images = Array.from(
+    { length: number },
+    (_, i) => `/products/${productName}/${i + 1}.jpg`
+  );
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isModalOpen]);
+
   return (
     <div className="swiper-cont">
       <Swiper
-        modules={[Pagination, A11y, EffectCoverflow]}
+        modules={[Pagination, A11y, EffectCoverflow, Autoplay]}
         spaceBetween={10}
-        slidesPerView={4}
+        slidesPerView={3}
         loop={true}
         pagination={{ clickable: true }}
+        autoplay={{
+          delay: 2000,
+          disableOnInteraction: false,
+        }}
         effect="coverflow"
         coverflowEffect={{
           rotate: 0,
           stretch: 0,
-          depth: 100,
-          modifier: 0,
+          depth: 150,
+          modifier: 1,
           slideShadows: true,
         }}
       >
         {generateSlides()}
       </Swiper>
 
-      {isModalOpen && <Modal imageSrc={modalImage} onClose={closeModal} />}
+      {isModalOpen && (
+        <Modal
+          images={images}
+          currentIndex={modalImageIndex}
+          onClose={closeModal}
+          onNext={handleNext}
+          onPrev={handlePrev}
+        />
+      )}
     </div>
   );
 };

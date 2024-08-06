@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  min-height: calc(100vh - 160px);
 
   h1 {
     position: absolute;
@@ -19,7 +20,7 @@
   form {
     width: 60%;
     height: 612.5px;
-    
+
     input {
       all: unset;
       width: calc(100% - 40px);

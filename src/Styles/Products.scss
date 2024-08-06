@@ -13,7 +13,7 @@
     .vanilla-section {
       width: 48%;
       margin: 1%;
-      aspect-ratio: 1/1.1;
+      aspect-ratio: 1/1;
       background-color: transparent;
       border-radius: 20px;
       backdrop-filter: blur(2px);
@@ -27,6 +27,59 @@
               filter: grayscale(0);
               transition: filter 0.5s;
             }
+          }
+        }
+      }
+
+      a {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        height: 100%;
+        width: 100%;
+        border-radius: 20px;
+        text-decoration: none;
+        color: gray;
+
+        h1 {
+          letter-spacing: 3px;
+          font-weight: 200;
+          font-size: 24px;
+          line-height: 24px;
+        }
+
+        h3 {
+          font-weight: 200;
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          color: black;
+          font-size: 14px;
+          text-align: justify;
+          font-weight: 300;
+          margin-bottom: 20px;
+        }
+
+        .img-grid {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1%;
+
+          .img-cont {
+            width: 25%;
+            aspect-ratio: 1/1.5;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+            border-radius: 5px;
+            filter: grayscale(0.8);
           }
         }
       }
@@ -174,58 +227,6 @@
                 background-image: url("/products/METALNE KONSTRUKCIJE/KOSMAJ 2/IMG-20240606-WA0052.jpg");
               }
             }
-          }
-        }
-      }
-
-      a {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 30px;
-        height: 100%;
-        width: 100%;
-        border-radius: 20px;
-        text-decoration: none;
-        color: gray;
-
-        h1 {
-          letter-spacing: 6px;
-          font-weight: 200;
-          font-size: 30px;
-        }
-
-        h3 {
-          font-weight: 200;
-          font-size: 18px;
-          line-height: 25px;
-          margin-bottom: 20px;
-        }
-
-        p {
-          color: black;
-          font-size: 14px;
-          text-align: justify;
-          font-weight: 300;
-          margin-bottom: 20px;
-        }
-
-        .img-grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 1%;
-
-          .img-cont {
-            width: 25%;
-            aspect-ratio: 1/1.2;
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-              rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-            border-radius: 5px;
-            filter: grayscale(0.8);
           }
         }
       }
