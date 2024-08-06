@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import "../Styles/Products.scss";
-import { motion } from "framer-motion";
-import Swiper from "../Components/SwiperComponent";
+import { motion, useInView } from "framer-motion";
 import VanillaTilt from "vanilla-tilt";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 const Products = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+
   const sectionMotion = {
     hidden: {
       opacity: 0,
@@ -19,6 +21,32 @@ const Products = () => {
         duration: 0.2,
         type: "spring",
         stiffness: 120,
+      },
+    },
+  };
+
+  const containerMotion = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const productMotion = {
+    hidden: {
+      x: -100,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.2,
+        type: "spring",
+        stiffness: 200,
       },
     },
   };
@@ -45,13 +73,16 @@ const Products = () => {
     <div className="page products">
       <h1>Proizvodi</h1>
 
-      <div className="products-wrap">
+      <motion.div
+        className="products-wrap"
+        ref={ref}
+        variants={containerMotion}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
         <motion.section
           className="vanilla-section one"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/garnisne">
             <h1>Garnišne za zavese</h1>
@@ -77,10 +108,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section two"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/nosaci-zavesa">
             <h1>Nosači za zavese</h1>
@@ -106,10 +134,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section three"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/kupatilska-galanterija">
             <h1>Kupatilska galanterija</h1>
@@ -135,10 +160,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section four"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/zidne-susilice">
             <h1>Zidne sušilice za veš</h1>
@@ -164,10 +186,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section five"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/metalni-namestaj">
             <h1>Izrada metalnog nameštaja</h1>
@@ -194,10 +213,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section six"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/metalne-ograde">
             <h1>Metalne ograde</h1>
@@ -221,10 +237,7 @@ const Products = () => {
 
         <motion.section
           className="vanilla-section seven"
-          variants={sectionMotion}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.4, once: true }}
+          variants={productMotion}
         >
           <Link to="/proizvodi/metalne konstrukcije">
             <h1>Metalne konstrukcije</h1>
@@ -244,7 +257,7 @@ const Products = () => {
             </div>
           </Link>
         </motion.section>
-      </div>
+      </motion.div>
     </div>
   );
 };
