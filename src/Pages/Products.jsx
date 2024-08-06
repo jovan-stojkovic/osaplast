@@ -169,7 +169,7 @@ const Products = () => {
           whileInView="visible"
           viewport={{ amount: 0.4, once: true }}
         >
-          <Link to="/proizvodi/zidne-susilice">
+          <Link to="/proizvodi/metalni-namestaj">
             <h1>Izrada metalnog nameštaja</h1>
             <h3>
               Otkrijte izdržljivost i eleganciju uz našu kolekciju metalnog
@@ -199,7 +199,7 @@ const Products = () => {
           whileInView="visible"
           viewport={{ amount: 0.4, once: true }}
         >
-          <Link to="/proizvodi/zidne-susilice">
+          <Link to="/proizvodi/metalne-ograde">
             <h1>Metalne ograde</h1>
             <h3>Dobrodošli u svet metalnih ograda</h3>
             <p>
@@ -220,13 +220,13 @@ const Products = () => {
         </motion.section>
 
         <motion.section
-          className="vanilla-section four"
+          className="vanilla-section seven"
           variants={sectionMotion}
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.4, once: true }}
         >
-          <Link to="/proizvodi/zidne-susilice">
+          <Link to="/proizvodi/metalne konstrukcije">
             <h1>Metalne konstrukcije</h1>
             <h3>Dobrodošli u Svet metalnih konstrukcija</h3>
             <p>

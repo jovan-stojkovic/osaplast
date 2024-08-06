@@ -13,7 +13,7 @@
     .vanilla-section {
       width: 48%;
       margin: 1%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1/1.1;
       background-color: transparent;
       border-radius: 20px;
       backdrop-filter: blur(2px);
@@ -104,6 +104,69 @@
         }
       }
 
+      &.five {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/METALNI NAMEŠTAJ/1.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/METALNI NAMEŠTAJ/7.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/METALNI NAMEŠTAJ/11.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/METALNI NAMEŠTAJ/13.jpg");
+              }
+            }
+          }
+        }
+      }
+
+      &.six {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/OGRADE/METALNE OGRADE/SINDJELIĆEVA SP/20200930_081809.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/OGRADE/METALNE OGRADE/SINĐELIĆEVA UN/IMG-20210429-WA0006.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/OGRADE/METALNE OGRADE/SKADARLIJA/20220510_162612.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/OGRADE/METALNE OGRADE/BRAĆE JERKOVIĆ 1/Screenshot_20211122-221613_Instagram.jpg");
+              }
+            }
+          }
+        }
+      }
+
+      &.seven {
+        a {
+          .img-grid {
+            .img-cont {
+              &:nth-of-type(1) {
+                background-image: url("/products/METALNE KONSTRUKCIJE/KOSMAJ 2/20221114_122125.jpg");
+              }
+              &:nth-of-type(2) {
+                background-image: url("/products/METALNE KONSTRUKCIJE/BUDIMSKA BEOGRAD/20231009_111524.jpg");
+              }
+              &:nth-of-type(3) {
+                background-image: url("/products/METALNE KONSTRUKCIJE/JAJINCI HALA/IMG-20240606-WA0112.jpg");
+              }
+              &:nth-of-type(4) {
+                background-image: url("/products/METALNE KONSTRUKCIJE/KOSMAJ 2/IMG-20240606-WA0052.jpg");
+              }
+            }
+          }
+        }
+      }
+
       a {
         display: flex;
         flex-direction: column;
@@ -144,7 +207,7 @@
 
           .img-cont {
             width: 25%;
-            aspect-ratio: 1/1;
+            aspect-ratio: 1/1.2;
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
