@@ -4,51 +4,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-const Galanterija = () => {
+const Galanterija = ({ generalMotion, pMotion, swiperMotion }) => {
   const [showFirst, setShowFirst] = useState(false);
   const [showSecond, setShowSecond] = useState(false);
-
-  const generalMotion = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        // delayChildren: 0.1,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const pMotion = {
-    hidden: {
-      x: -300,
-      opacity: 0,
-    },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.1,
-        type: "spring",
-        stiffness: 120,
-      },
-    },
-  };
-
-  const swiperMotion = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 1,
-        delay: 2,
-      },
-    },
-  };
 
   return (
     <motion.div
@@ -69,7 +27,7 @@ const Galanterija = () => {
         proizvoda nudi rešenja za svaki deo vašeg kupatila.
       </motion.p>
       <motion.h5 variants={pMotion}>
-        Šta nudimo:{" "}
+        Šta nudimo:
         <button
           className={showFirst && "show"}
           onClick={() => setShowFirst(!showFirst)}

@@ -29,6 +29,48 @@ const App = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
 
+  const generalMotion = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        // delayChildren: 0.1,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const pMotion = {
+    hidden: {
+      x: -300,
+      opacity: 0,
+    },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.1,
+        type: "spring",
+        stiffness: 120,
+      },
+    },
+  };
+
+  const swiperMotion = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 1,
+        delay: 1,
+      },
+    },
+  };
+
   return (
     <LayoutGroup type="crossfade">
       <AnimatePresence>
@@ -45,30 +87,75 @@ const App = () => {
                   <Route exact path="/" element={<Home loading={loading} />} />
                   <Route path="/o-nama" element={<About />} />
                   <Route path="/proizvodi" element={<Products />} />
-                  <Route path="/proizvodi/garnisne" element={<Garnisne />} />
+                  <Route
+                    path="/proizvodi/garnisne"
+                    element={
+                      <Garnisne
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
+                  />
                   <Route
                     path="/proizvodi/nosaci-zavesa"
-                    element={<NosaciZavesa />}
+                    element={
+                      <NosaciZavesa
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route
                     path="/proizvodi/kupatilska-galanterija"
-                    element={<Galanterija />}
+                    element={
+                      <Galanterija
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route
                     path="/proizvodi/zidne-susilice"
-                    element={<ZidneSusilice />}
+                    element={
+                      <ZidneSusilice
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route
                     path="/proizvodi/metalni-namestaj"
-                    element={<MetalniNamestaj />}
+                    element={
+                      <MetalniNamestaj
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route
                     path="/proizvodi/metalne-ograde"
-                    element={<MetalneOgrade />}
+                    element={
+                      <MetalneOgrade
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route
                     path="/proizvodi/metalne-konstrukcije"
-                    element={<MetalneKonstrukcije />}
+                    element={
+                      <MetalneKonstrukcije
+                        generalMotion={generalMotion}
+                        pMotion={pMotion}
+                        swiperMotion={swiperMotion}
+                      />
+                    }
                   />
                   <Route path="/kontakt" element={<Contact />} />
                 </Routes>

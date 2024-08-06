@@ -18,7 +18,8 @@ main {
   min-height: 100vh;
   background-image: url("/background/background-light.jpg");
   overflow-x: hidden;
-
+position: relative;
+padding-bottom: 200px;
 }
 
 .app {
