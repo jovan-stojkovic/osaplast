@@ -1,6 +1,7 @@
 import "./Styles/App.scss";
 import { Routes, Route } from "react-router-dom";
 import { motion, AnimatePresence, LayoutGroup } from "framer-motion";
+import { useState } from "react";
 
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
@@ -14,7 +15,9 @@ import Garnisne from "./Categories/Garnisne";
 import NosaciZavesa from "./Categories/NosaciZavesa";
 import Galanterija from "./Categories/Galanterija";
 import ZidneSusilice from "./Categories/ZidneSusilice";
-import { useState } from "react";
+import MetalniNamestaj from "./Categories/MetalniNamestaj";
+import MetalneOgrade from "./Categories/MetalneOgrade";
+import MetalneKonstrukcije from "./Categories/MetalneKonstrukcije";
 
 import ThemeContext from "./Helpers/ThemeContext";
 
@@ -54,6 +57,18 @@ const App = () => {
                   <Route
                     path="/proizvodi/zidne-susilice"
                     element={<ZidneSusilice />}
+                  />
+                  <Route
+                    path="/proizvodi/metalni-namestaj"
+                    element={<MetalniNamestaj />}
+                  />
+                  <Route
+                    path="/proizvodi/metalne-ograde"
+                    element={<MetalneOgrade />}
+                  />
+                  <Route
+                    path="/proizvodi/metalne-konstrukcije"
+                    element={<MetalneKonstrukcije />}
                   />
                   <Route path="/kontakt" element={<Contact />} />
                 </Routes>

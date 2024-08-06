@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import VanillaTilt from "vanilla-tilt";
 import Swiper from "../Components/SwiperComponent";
 
-const MetalniNamestaj = () => {
+const MetalneOgrade = () => {
   useEffect(() => {
     let elements = document.querySelectorAll(".single-product");
     VanillaTilt.init(elements, {
@@ -121,4 +121,4 @@ const MetalniNamestaj = () => {
   );
 };
 
-export default MetalniNamestaj;
+export default MetalneOgrade;
