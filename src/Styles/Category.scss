@@ -46,6 +46,10 @@
     align-items: center;
     gap: 15px;
 
+    &.h5-btn {
+      cursor: pointer;
+    }
+
     button {
       all: unset;
       width: 20px;

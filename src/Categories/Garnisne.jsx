@@ -25,12 +25,13 @@ const Garnisne = ({ generalMotion, pMotion, swiperMotion }) => {
         kombinaciju estetike i funkcionalnosti, pružajući ne samo podršku vašim
         zavesama već i ističući jedinstven karakter vašeg enterijera.
       </motion.p>
-      <motion.h5 variants={pMotion}>
-        Zašto izabrati naše garnišne?{" "}
-        <button
-          className={showFirst && "show"}
-          onClick={() => setShowFirst(!showFirst)}
-        ></button>
+      <motion.h5
+        className="h5-btn"
+        variants={pMotion}
+        onClick={() => setShowFirst(!showFirst)}
+      >
+        Zašto izabrati naše garnišne?
+        <button className={showFirst && "show"}></button>
       </motion.h5>
       <ul className={showFirst && "show"}>
         <li>

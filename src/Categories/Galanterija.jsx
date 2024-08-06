@@ -26,12 +26,13 @@ const Galanterija = ({ generalMotion, pMotion, swiperMotion }) => {
         prostora ili poboljšati njegovu funkcionalnost, naš širok asortiman
         proizvoda nudi rešenja za svaki deo vašeg kupatila.
       </motion.p>
-      <motion.h5 variants={pMotion}>
+      <motion.h5
+        className="h5-btn"
+        variants={pMotion}
+        onClick={() => setShowFirst(!showFirst)}
+      >
         Šta nudimo:
-        <button
-          className={showFirst && "show"}
-          onClick={() => setShowFirst(!showFirst)}
-        ></button>
+        <button className={showFirst && "show"}></button>
       </motion.h5>
       <ul className={showFirst && "show"}>
         <li>
@@ -58,12 +59,12 @@ const Galanterija = ({ generalMotion, pMotion, swiperMotion }) => {
         </li>
       </ul>
 
-      <motion.h5 variants={pMotion}>
-        Zašto odabrati nas?{" "}
-        <button
-          className={showSecond && "show"}
-          onClick={() => setShowSecond(!showSecond)}
-        ></button>
+      <motion.h5
+        className="h5-btn"
+        variants={pMotion}
+        onClick={() => setShowSecond(!showSecond)}
+      >
+        Zašto odabrati nas? <button className={showSecond && "show"}></button>
       </motion.h5>
       <ul className={showSecond && "show"}>
         <li>
